@@ -31,7 +31,8 @@ __version__ = 'x.y.z'
 
 import click
 
-@click.command():
+
+@click.command()
 @click.version_option(version=__version__)
 def cli():
     """sample click-based function"""

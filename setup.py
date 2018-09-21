@@ -130,4 +130,3 @@ setup(
     ],
     cmdclass={'test': PyTest, 'coverage': PyCoverage}
 )
-

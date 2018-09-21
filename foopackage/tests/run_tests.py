@@ -32,10 +32,12 @@ import unittest
 
 TESTDATA_DIR = os.path.dirname(os.path.realpath(__file__))
 
+
 def get_abspath(filepath):
     """helper function to facilitate absolute test file access"""
 
-    return os.path.join(THISDIR, filepath)
+    return os.path.join(TESTDATA_DIR, filepath)
+
 
 def msg(test_id, test_description):
     """convenience function to print out test id and desc"""
@@ -46,7 +48,7 @@ class FooTest(unittest.TestCase):
     """Test suite for package Foo"""
     def setUp(self):
         """setup test fixtures, etc."""
-        print msg(self.id(), self.shortDescription())
+        print(msg(self.id(), self.shortDescription()))
 
     def tearDown(self):
         """return to pristine state"""
@@ -56,6 +58,7 @@ class FooTest(unittest.TestCase):
         """Simple Smoke Test"""
         # test assertions go here
         self.assertEquals(1, 1, 'Expected equality')
+
 
 if __name__ == '__main__':
     unittest.main()

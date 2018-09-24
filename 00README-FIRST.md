@@ -10,23 +10,22 @@ This is a template when starting Python projects.
 - versioning: https://semver.org
 - virtualenv: https://virtualenv.pypi.io
 - dependencies are fetched, not managed in version control
- - pip: https://pip.pypa.io/en/stable/
+  - pip: https://pip.pypa.io/en/stable/
 - platform independence, use os
 - Python
- - develop modules for reuse, scripts are the last step
- - logging, not print statements
-  - command line functions as [click](http://click.pocoo.org/5/) functions
-  - no print statements
-   - everything is callable
- - tests, tests, tests
- - PEP8: http://www.python.org/dev/peps/pep-0008/
-  - specifically:
-   - 4 spaces, NOT tabs
-   - UNIX line endings, NOT DOS
-   - 4 spaces, NOT tabs
-   - did we mention 4 spaces, NOT tabs?
-   - always absolute imports
-   - always run code through flake8 before committing:
+  - develop modules for reuse, scripts are the last step
+  - logging, not print statements
+    - command line functions as [click](http://click.pocoo.org/5/) functions
+    - no print statements
+  - everything is callable
+  - tests, tests, tests
+  - PEP8: http://www.python.org/dev/peps/pep-0008/ , specifically:
+    - 4 spaces, NOT tabs
+    - UNIX line endings, NOT DOS
+    - 4 spaces, NOT tabs
+    - did we mention 4 spaces, NOT tabs?
+    - always absolute imports
+    - always run code through flake8 before committing:
 ```bash
     pip install flake8
     flake8 foo.py

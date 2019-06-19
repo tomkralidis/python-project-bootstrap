@@ -14,7 +14,7 @@ pip install foopackage
 ```
 
 ### Requirements
-- Python 3.  Works with Python 2.7
+- Python 3
 - [virtualenv](https://virtualenv.pypa.io/)
 
 ### Dependencies
@@ -25,7 +25,7 @@ are automatically installed during foopackage installation.
 
 ```bash
 # setup virtualenv
-virtualenv --system-site-packages -p python3 foopackage
+python3 -m venv --system-site-packages foopackage
 cd foopackage
 source bin/activate
 

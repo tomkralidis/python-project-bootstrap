@@ -41,7 +41,7 @@ def get_abspath(filepath):
 
 def msg(test_id, test_description):
     """convenience function to print out test id and desc"""
-    return '{}: {}'.format(test_id, test_description)
+    return f'{test_id}: {test_description}'
 
 
 class FooTest(unittest.TestCase):

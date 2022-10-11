@@ -73,6 +73,7 @@ coverage report -m
 ## Releasing
 
 ```bash
+rm -fr build dist *.egg-info
 python3 setup.py sdist bdist_wheel --universal
 twine upload dist/*
 ```

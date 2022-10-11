@@ -46,7 +46,7 @@ class PyTest(Command):
     def run(self):
         import subprocess
         errno = subprocess.call([sys.executable,
-                                 'foopackage/tests/run_tests.py'])
+                                 'tests/run_tests.py'])
         raise SystemExit(errno)
 
 
@@ -64,7 +64,7 @@ class PyCoverage(Command):
 
         errno = subprocess.call(['coverage', 'run', '--source=foopackage',
                                  '-m', 'unittest',
-                                 'foopackage.tests.run_tests'])
+                                 'tests.run_tests'])
         errno = subprocess.call(['coverage', 'report', '-m'])
         raise SystemExit(errno)
 
@@ -111,9 +111,9 @@ setup(
     author_email='email-address',
     maintainer='Firstname Lastname',
     maintainer_email='email-address',
-    url='https://example.org./foopackage',
+    url='https://example.org/foopackage',
     install_requires=read('requirements.txt').splitlines(),
-    packages=find_packages(exclude=['foopackage.tests']),
+    packages=find_packages(),
     include_package_data=True,
     entry_points={
         'console_scripts': [

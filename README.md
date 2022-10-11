@@ -6,16 +6,16 @@ This is the foopackage package.
 
 ## Installation
 
-The easiest way to install foopackage is via the Python [pip](https://pip.pypa.io/en/stable/)
+The easiest way to install foopackage is via the Python [pip](https://pip.pypa.io)
 utility:
 
 ```bash
-pip install foopackage
+pip3 install foopackage
 ```
 
 ### Requirements
 - Python 3
-- [virtualenv](https://virtualenv.pypa.io/)
+- [virtualenv](https://virtualenv.pypa.io)
 
 ### Dependencies
 Dependencies are listed in [requirements.txt](requirements.txt). Dependencies
@@ -32,8 +32,8 @@ source bin/activate
 # clone codebase and install
 git clone https://github.com/geopython/foopackage.git
 cd foopackage
-python setup.py build
-python setup.py install
+python3 setup.py build
+python3 setup.py install
 ```
 
 ## Running
@@ -57,13 +57,13 @@ foopackage --version
 
 ```bash
 # install dev requirements
-pip install -r requirements-dev.txt
+pip3 install -r requirements-dev.txt
 
 # run tests like this:
-python foopackage/tests/run_tests.py
+python3 foopackage/tests/run_tests.py
 
 # or this:
-python setup.py test
+python3 setup.py test
 
 # measure code coverage
 coverage run --source=foopackage -m unittest foopackage.tests.run_tests
@@ -73,7 +73,7 @@ coverage report -m
 ## Releasing
 
 ```bash
-python setup.py sdist bdist_wheel --universal
+python3 setup.py sdist bdist_wheel --universal
 twine upload dist/*
 ```
 

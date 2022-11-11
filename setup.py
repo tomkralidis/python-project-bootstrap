@@ -27,8 +27,7 @@
 #
 # =================================================================
 
-import io
-import os
+from pathlib import Path
 import re
 from setuptools import Command, find_packages, setup
 import sys
@@ -71,8 +70,10 @@ class PyCoverage(Command):
 
 def read(filename, encoding='utf-8'):
     """read file contents"""
-    full_path = os.path.join(os.path.dirname(__file__), filename)
-    with io.open(full_path, encoding=encoding) as fh:
+
+    fullpath = Path(__file__).resolve().parent / filename
+
+    with fullpath.open() as fh:
         contents = fh.read().strip()
     return contents
 
@@ -91,8 +92,10 @@ LONG_DESCRIPTION = read('README.md')
 
 DESCRIPTION = 'This is the foopackage package'
 
-if os.path.exists('MANIFEST'):
-    os.unlink('MANIFEST')
+MANIFEST = Path('MANIFEST')
+
+if MANIFEST.exists():
+    MANIFEST.unlink()
 
 setup(
     name='foopackage',

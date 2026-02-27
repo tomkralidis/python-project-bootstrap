@@ -32,8 +32,7 @@ source bin/activate
 # clone codebase and install
 git clone https://github.com/geopython/foopackage.git
 cd foopackage
-python3 setup.py build
-python3 setup.py install
+pip3 install .
 ```
 
 ## Running
@@ -57,30 +56,40 @@ foopackage --version
 
 ```bash
 # install dev requirements
-pip3 install -r requirements-dev.txt
+pip3 install ".[dev]"
+pip3 install ".[tests]"
 
-# run tests like this:
-python3 foopackage/tests/run_tests.py
-
-# or this:
-python3 setup.py test
-
-# measure code coverage
-coverage run --source=foopackage -m unittest foopackage.tests.run_tests
-coverage report -m
+pytest tests/
 ```
+
 
 ## Releasing
 
 ```bash
+# create release (x.y.z is the release version)
+vi pyproject.toml  # update [project]/version
+git commit -am 'update release version x.y.z'
+git push origin main
+git tag -a x.y.z -m 'tagging release version x.y.z'
+git push --tags
+
+# upload to PyPI
 rm -fr build dist *.egg-info
-python3 setup.py sdist bdist_wheel --universal
+python3 -m build
 twine upload dist/*
+
+# publish release on GitHub (https://github.com/geopython/foopackage/releases/new)
+
+# bump version back to dev
+vi pyproject.toml  # update [project]/version
+git commit -am 'back to dev'
+git push origin main
 ```
 
-### Code Conventions
+### Conventions
 
-* [PEP8](https://www.python.org/dev/peps/pep-0008)
+* Code: [PEP 8](https://www.python.org/dev/peps/pep-0008)
+* Build: [PEP 517](https://www.python.org/dev/peps/pep-0517)
 
 ### Bugs and Issues
 

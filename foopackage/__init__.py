@@ -1,4 +1,4 @@
-# =================================================================
+###################################################################
 #
 # Author: Firstname Lastname <email-address>
 #
@@ -25,11 +25,13 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 #
-# =================================================================
-
-__version__ = 'x.y.z'
+###################################################################
 
 import click
+
+from foopackage.util import get_package_version
+
+__version__ = get_package_version()
 
 
 @click.command()
